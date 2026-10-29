@@ -23,6 +23,19 @@ in {
 	environment.systemPackages = with pkgs; [
 		openssh
 	];
+
+	# Enable the OpenSSH daemon.
+	services.openssh = {
+		enable = true;
+	#   ports = 22;
+		allowSFTP = true;
+		settings = {
+		PermitRootLogin = "yes" ;
+		PasswordAuthentication = true;
+		};
+	};
+
+	#services.openssh.enable = true;
 	
-	services.openssh.enable = true;
+	
 }
