@@ -7,7 +7,8 @@ let
 in {
 	system.activationScripts.ssh = ''
 		# no rm for keeping credentials, adding -p
-		mkdir -p ${home}/.ssh/known_hosts.d
+		mkdir -p ${home}/.ssh/include.d
+		mkdir -p ${home}/.ssh/kown_hosts.d
 		chown ${username}:${group} ${home}/.ssh -R
 		chmod 700 ${home}/.ssh -R
 
@@ -34,8 +35,6 @@ in {
 		PasswordAuthentication = true;
 		};
 	};
-
-	#services.openssh.enable = true;
 	
 	
 }
