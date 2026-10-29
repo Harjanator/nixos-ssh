@@ -7,9 +7,9 @@ let
 in {
 	system.activationScripts.ssh = ''
 		# no rm for keeping credentials, adding -p
-		mkdir -p ${home}/.ssh
+		mkdir -p ${home}/.ssh/known_hosts.d
 		chown ${username}:${group} ${home}/.ssh
-		chmod 700 ${home}/.ssh
+		chmod 700 ${home}/.ssh -R
 
 		cp ${./config} ${home}/.ssh/config
 		chown ${username}:${group} ${home}/.ssh/config
