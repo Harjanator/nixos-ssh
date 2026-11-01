@@ -16,9 +16,9 @@ in {
 		chown ${username}:${group} ${home}/.ssh/config
 		chmod 600 ${home}/.ssh/config
 
-		cp ${./allowed_signers} ${home}/.ssh/allowed_signers
-		chown ${username}:${group} ${home}/.ssh/allowed_signers
-		chmod 600 ${home}/.ssh/allowed_signers
+#		cp ${./allowed_signers} ${home}/.ssh/allowed_signers
+#		chown ${username}:${group} ${home}/.ssh/allowed_signers
+#		chmod 600 ${home}/.ssh/allowed_signers
 	'';
 
 	environment.systemPackages = with pkgs; [
